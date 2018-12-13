@@ -1,0 +1,216 @@
+#dealer-page {
+    margin-bottom: 20px;
+
+    h6 {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .dealer-info-card-header {
+        .dealer-header {
+
+            img {
+              width: 100%;
+            }
+            i {
+                font-size: 1.875rem;
+            }
+
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            .dealer-title {
+                font-weight: bold;
+                font-size: 1rem;
+                @include media-breakpoint-up(md) {
+                    font-size: 1.55rem;
+                    font-weight: normal;
+                }
+            }
+
+            .dealer-address {
+                font-size: 0.75rem;
+                @include media-breakpoint-up(md) {
+                    font-size: 1rem;
+                }
+            }
+
+            .dealer-contacts {
+                color: #0087cc;
+                text-decoration: underline;
+                padding-top: 15px;
+                font: 0.5rem;
+            }
+            margin-bottom: 28px;
+        }
+    }
+
+    .dealer-info-card-body {
+        .container .container {
+            padding: 0;
+            /*fix for container inside container */
+        }
+
+        #dealer-info-card {
+            border: none;
+
+            .highlighted-search-results {
+                display: none;
+            }
+
+            #search-sorting {
+                margin-top: 0 !important;
+            }
+
+            .dealer-info-card-body {
+                padding: 0;
+
+                .nav-dealer-container {
+                    padding-bottom: 40px;
+                    @include media-breakpoint-down(md) {
+                        padding-bottom: 20px;
+                    }
+
+                    #bedrijfs-informatie-tab {
+                        @include media-breakpoint-down(sm) {
+                            border-top: solid 1px $border-color;
+                            border-bottom: solid 1px $border-color;
+                            padding-top: 10px;
+                        }
+
+                        a {
+                            @include media-breakpoint-down(sm) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .nav-link {
+                            padding: 19px 32px;
+                        }
+                    }
+
+                    .nav-tabs .nav-link {
+                        font-weight: bold;
+                        color: $gray-900;
+
+                        &.active {
+                            border: none;
+                            border-bottom: 1px solid theme-color("primary");
+                            color: theme-color("primary");
+                        }
+                    }
+                }
+
+                .dealerinfo-tab-content {}
+
+                #aanbod {
+                    border-radius: unset;
+                    border: none;
+                }
+
+                .tab-pane {
+                    border: none;
+                    @include media-breakpoint-up(md) {
+                        border-radius: 2px;
+                        border: solid 1px #e7e7e7;
+                    }
+
+                    .dealer-right-side {
+                        .dealer-working-time {
+                            border-bottom: solid 1px #e7e7e7;
+
+                            .table-borderless {
+                                td {
+                                    padding: 0;
+                                }
+
+                                tr {
+                                    td:last-child {
+                                        padding-left: 80px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .importer-brand-container {
+                            border-bottom: solid 1px #e7e7e7;
+
+                            .brand-list {
+                                padding-left: 15px;
+                            }
+                        }
+                    }
+
+                    .tab-box {
+                        padding: 17px 20px;
+
+                        .tab-content {
+                            .dealer-form {
+                                .btn-block {
+                                    height: 100%;
+                                    padding-top: 0.9rem;
+                                    padding-left: 2.5rem;
+                                }
+                            }
+
+                            .dealer-bottom-side {
+                                .dealer-bottom-working-hours {
+                                    @include media-breakpoint-up(sm) {
+                                        border-right: solid 1px $border-color;
+                                    }
+
+                                    td {
+                                        padding: 0;
+                                    }
+                                }
+
+                                .dealer-bottom-brand-list {
+                                    @include media-breakpoint-up(sm) {
+                                        border-right: solid 1px $border-color;
+                                    }
+
+                                    ul {
+                                        padding-left: 20px;
+                                    }
+                                }
+                            }
+
+                            .bedrijfspagina-slide {
+                                @include media-breakpoint-up(sm) {
+                                    margin-top: 20px;
+                                }
+
+                                .flexslider {
+                                    border: 0;
+                                }
+
+                                #bedrijfspagina-page-panel-slider {
+                                    margin-bottom: 20px;
+
+                                    img {
+                                        height: 483px;
+                                        @include media-breakpoint-down(sm) {
+                                            height: 195px;
+                                        }
+                                    }
+                                }
+
+                                #bedrijfspagina-page-panel-carousel {
+                                    margin-bottom: 0;
+
+                                    img {
+                                        height: 96px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

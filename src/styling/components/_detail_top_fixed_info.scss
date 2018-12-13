@@ -1,0 +1,130 @@
+#top-fixed-info {
+	top: -65px;
+	position: fixed;
+	width: 100%;
+	background-color: theme-color("primary");
+	box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+	z-index: 1030;
+	left: 0;
+	padding: 7px 0;
+	transition: top 0.3s ease;
+
+	&.show-bar {
+		top: 0;
+	}
+
+	.fixed-detail-message {
+		a {
+			color: #fff;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				display: block;
+				border-top: 20px solid #ec6707;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				left: 0;
+				right: 0;
+				margin: auto;
+				bottom: -40px;
+				width: 0;
+				transition: border-top-color 0.15s ease;
+			}
+
+			&:hover::before {
+				border-top-color: #c75706;
+			}
+		}
+	}
+
+	.fixed-detail-price {
+		color: #fff;
+		font-size: 1.2rem;
+		text-align: right;
+		padding-top: 6px;
+		z-index: 3999;
+
+		strike {
+			display: none;
+		}
+	}
+
+	.fixed-detail-title {
+		color: #fff;
+		font-size: 1.2rem;
+		padding-top: 6px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.btn-secondary {
+		padding: 0.5rem 0;
+	}
+}
+
+.fixed-sidebar {
+	position: fixed;
+	width: 226px;
+	top: 75px;
+	z-index: 1020;
+	transition: padding 0.3s ease;
+}
+
+#detail-sidebar {
+	#detail-sidebar-inner {
+		@include media-breakpoint-down(md) {
+			padding-top: 90px !important;
+			position: static;
+			width: 100%;
+			top: auto;
+		}
+	}
+
+	.card {
+		border: 1px solid $gray-600;
+		box-shadow: 0 10px 6px -6px #777;
+
+		.dsi-h {
+			background-color: theme-color("secondary");
+			color: #fff;
+			text-align: center;
+			padding: 9px 0;
+			font-size: 1.2rem;
+
+			.glyphicon.glyphicon-envelope {
+				vertical-align: middle;
+				margin-right: 7px;
+			}
+		}
+
+		.icons-send {
+			margin-right: 7px;
+		}
+	}
+}
+
+#detail-page .detail-right .card .card-body .btn-primary {
+	margin-bottom: 0 !important;
+}
+
+#detail-page .card.d-none.d-lg-block .card-body p:nth-child(3) {
+	display: none;
+}
+
+#detail-page .card.d-none.d-lg-block .card-body .telefoonnumber br {
+	display: none;
+}
+@media screen and (max-width: 370px) {
+	#top-fixed-info .fixed-detail-title {
+		display: none;
+	}
+
+	#top-fixed-info .fixed-detail-message {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}

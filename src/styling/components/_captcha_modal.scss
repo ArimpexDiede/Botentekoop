@@ -1,0 +1,13 @@
+#captchaModal {
+    .modal-dialog {
+        max-width: 336px;
+
+        .modal-footer {
+            button, input {
+                width: calc(50% - .25rem);
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

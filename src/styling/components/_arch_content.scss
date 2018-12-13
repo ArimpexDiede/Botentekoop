@@ -1,0 +1,150 @@
+@import "../bootstrap/_mixins";
+
+#arch-content {
+    h4 {
+        a {
+            text-decoration: none !important;
+            color: theme-color("primary") !important;
+            display: block;
+            height: 1.5rem;
+            overflow: hidden;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        img {
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            position: relative;
+            max-height: 400px;
+        }
+
+        .col {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .arch-content-info {
+            border-bottom: $border-width $border-color solid;
+        }
+    }
+
+    #second-content {
+        margin-top: 47px;
+        overflow: hidden;
+
+        .col {
+            margin-bottom: 20px;
+
+            iframe {
+                transform: scale(1.025,1) translateX(5px);
+                @include media-breakpoint-only(md) {
+                    transform: scale(.75, 1) translateX(-48px);
+                }
+                @include media-breakpoint-down(sm) {
+                  margin: auto;
+                  display: block;
+                }
+            }
+
+            .home-ad-1 {
+                height: auto;
+            }
+
+            .home-ad-2 {
+                background-color: theme-color("primary");
+                margin-top: 24px;
+                border-radius: 2px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                    padding: 9px 12px;
+
+                    .line-1 {
+                        font-size: 2rem;
+                        font-weight: bold;
+
+                        span {
+                            &:nth-child(1) {
+                                color: #f39c00;
+                            }
+                        }
+                    }
+
+                    .line-2 {
+                        font-size: 1.5rem;
+                        line-height: 0.9;
+
+                        .icon-pijl {
+                            vertical-align: middle;
+
+                            &::before {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .arch-content-info {
+        font-size: 1.06rem;
+        position: relative;
+
+        h4 {
+            color: theme-color("primary");
+            padding: 12px 0;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.16;
+            height: 35px;
+            @include media-breakpoint-down(lg) {
+                height: auto;
+                margin: 0;
+            }
+        }
+
+        .product-specification {
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .product-location {
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .placeholder-link {
+            height: 25px;
+            overflow: hidden;
+
+            .row {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        a:not(.btn) {
+            color: theme-color("secondary");
+            text-decoration: underline;
+        }
+
+        .price {
+            font-size: large;
+            font-weight: bold;
+            padding-top: 12px;
+            @include media-breakpoint-up(lg) {
+                span {
+                    display: block;
+                    position: absolute;
+                    left: 12px;
+                    bottom: -4px;
+                }
+            }
+        }
+    }
+}

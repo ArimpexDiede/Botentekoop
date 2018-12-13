@@ -1,0 +1,98 @@
+﻿.highlighted-search-results {
+    margin-bottom: 12px;
+
+
+    .image-caption {
+        background-color: $blue-lightest;
+        padding: 8px;
+        color: theme-color("primary");
+        overflow: hidden;
+        font-size: 0.8rem;
+    }
+
+    .highlight-imageoverlay {
+        width: 24px;
+        height: 22px;
+        background-color: #f49817;
+        padding: 4px 5px 0 5px;
+        position: absolute;
+        top: 0;
+        left: 25px;
+        z-index: 2;
+
+        i {
+            &:before {
+                color: white;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            border-right: 12px solid #f49817;
+            border-left: 12px solid #f49817;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            left: 0;
+            top: 12px;
+        }
+    }
+
+    .highlighted-search-item-info {
+        position: relative;
+
+        h4 {
+            padding: 8px 0 8px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.16;
+            margin-bottom: 0;
+
+            a {
+                text-decoration: none !important;
+                color: theme-color("primary") !important;
+            }
+        }
+
+        a:not(.btn) {
+            color: theme-color("secondary");
+            text-decoration: underline;
+        }
+
+        .product-specification {
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .product-location {
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .placeholder-link {
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .price {
+            font-weight: bold;
+
+            .text-info {
+                font-size: 0.8rem;
+                text-decoration: line-through;
+                padding-left: 5px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .col {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .new-content-info {
+            border-bottom: $border-width $border-color solid;
+        }
+    }
+}

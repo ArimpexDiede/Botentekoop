@@ -1,0 +1,39 @@
+﻿@import "../bootstrap/_mixins";
+
+#home-categories {
+    margin-top: 90px;
+
+    .home-category {
+        font-size: 2rem;
+
+        .home-category-text {
+            position: absolute;
+            display: inline-block;
+            top: 10px;
+            margin-left: 19px;
+        }
+
+        i {
+            font-size: 3rem;
+            /*@include media-breakpoint-down(lg) {
+            font-size: 1rem;
+                 }*/
+        }
+    }
+
+    a {
+        color: $body-color;
+        line-height: 26px;
+
+        &:hover {
+            text-decoration: none;
+            color: $link-hover-color;
+        }
+
+        font-size: 1.1rem;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 0.6rem;
+        }
+    }
+}

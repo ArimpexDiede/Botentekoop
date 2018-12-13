@@ -1,0 +1,117 @@
+@import "../bootstrap/_mixins";
+
+#redactie-content {
+    .media {
+        height: auto;
+        overflow: hidden;
+        @include media-breakpoint-only(md) {
+            display: inline-flex;
+            width: 49%;
+        }
+        @include media-breakpoint-up(sm) {
+            height: 76.9px;
+        }
+        @include media-breakpoint-up(lg) {
+            /*.media-body a {
+                overflow: hidden;
+                position: relative;
+                line-height: 1.2em;
+                max-height: 2.4em;
+                display: block;
+
+                &::before {
+                    content: '...';
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    color: #0087cc;
+                    z-index: 999;
+                    width: 50%;
+                    background-color: #fff;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    width: 1em;
+                    height: 1em;
+                    margin-top: 0.2em;
+                    background-color: #fff;
+                }
+            }
+
+            &:nth-child(1) .media-body a::before {
+                display: none;
+            }*/
+            .small-pictures-boats a {
+                max-height: 2.6rem !important;
+                display: block;
+                overflow: hidden;
+            }
+        }
+
+        .media-body {
+            font-size: small;
+            padding-top: 0.5rem;
+
+            .text-info {
+                font-style: italic;
+            }
+        }
+
+        .small-pictures-boats {
+            @include media-breakpoint-down(sm) {
+                font-size: 1rem;
+            }
+        }
+
+        img {
+            height: 74.4px;
+            width: 125px;
+            border-radius: 2px;
+        }
+
+        a {}
+        margin-bottom: 21.8px;
+    }
+
+    .card {
+        border-radius: 0;
+        border: none;
+
+        .image {
+            &:after {
+                position: absolute;
+                content: '\A';
+                width: 100%;
+                height: 74px;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: rgba(0,0,0,0.5);
+                @include media-breakpoint-down(sm) {
+                    height: 92px;
+                }
+            }
+        }
+
+        .card-img-overlay {
+            top: auto;
+            font-weight: bold;
+            padding: 0.65rem 1.25rem;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            h6 {
+                margin-bottom: 0;
+            }
+        }
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 20px;
+        }
+    }
+}

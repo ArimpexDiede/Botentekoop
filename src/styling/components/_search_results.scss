@@ -1,0 +1,100 @@
+.search-results {
+    li br + .row {
+        margin: 0 !important;
+    }
+
+    .search-result {
+        padding-bottom: 20px;
+        border-bottom: $border-width $border-color solid;
+        margin-top: 20px;
+
+        .col {
+            .row {
+                margin-top: 11px;
+            }
+
+            .product-specification {
+                height: 25px;
+                overflow: hidden;
+            }
+
+            .product-location {
+                height: 25px;
+                overflow: hidden;
+            }
+
+            .placeholder-link {
+                height: 25px;
+                overflow: hidden;
+            }
+
+            .text-right {
+                .btn {
+                    @include media-breakpoint-only(md) {
+                        padding: 8px 27px;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        a:not(.btn) {
+            color: $orange;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+
+            a {
+                color: theme-color("primary") !important;
+                text-decoration: none !important;
+            }
+        }
+
+        .price {
+            font-size: large;
+            font-weight: bold;
+            padding-top: 12px;
+            position: absolute;
+            bottom: 5px;
+            @include media-breakpoint-down(sm) {
+                position: relative;
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+.search-bottom-text {
+    h3 {
+        font-size: 25px;
+        color: theme-color("primary");
+        margin-bottom: 25px;
+    }
+}
+
+#search-page {
+    #afstand-accordion {
+        .btn.btn-secondary {
+            width: 100%;
+            padding: 14px 0;
+            cursor: pointer;
+
+
+
+        }
+        #search-btn-wrap {
+          &.sticky-btn {
+              position: fixed;
+              bottom: 0;
+              width: 226px;
+              z-index: 10000;
+          }
+        }
+    }
+
+    .btn.btn-outline-info.float-right {
+        padding: 9px 12px 8px;
+    }
+}

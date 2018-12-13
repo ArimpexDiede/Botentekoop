@@ -1,0 +1,44 @@
+#search-result-pagination {
+    margin-top: 29px;
+    margin-bottom: 36px;
+    @include media-breakpoint-down(sm) {
+        margin-top: 0;
+    }
+
+    .results-count {
+        padding-top: 7px;
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+    }
+
+    .page-item {
+        .page-link {
+            margin: 0 4px;
+            border-radius: 3px;
+        }
+
+        &:last-child {
+            .page-link {
+                margin-right: 0;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .col.align-self-end.text-right {
+            width: 100%;
+            flex-basis: auto;
+
+            .pagination {
+                display: block;
+                text-align: center;
+                float: none !important;
+
+                .page-item {
+                    display: inline-block;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
