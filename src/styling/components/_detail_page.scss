@@ -5,6 +5,10 @@
 }
 
 #detail-page {
+    .btn-primary.btn.btn-block[data-target="#exampleModal"] {
+        margin-top: 1rem;
+    }
+
     #sticker {
         z-index: 1040 !important;
     }
@@ -190,7 +194,7 @@
             margin-top: -5px;
 
             .glyphicon-heart-empty::before {
-              color: #fff;
+                color: #fff;
             }
         }
 
@@ -257,10 +261,18 @@
                 color: #fff;
                 text-decoration: none !important;
                 pointer-events: none;
-            }
 
-            .icons-Phone {
-                margin-right: 4px;
+                .numberstart {
+                    font-weight: normal;
+                }
+
+                .icons-Phone {
+                    margin-right: 4px;
+
+                    &::before {
+                        color: #fff !important;
+                    }
+                }
             }
         }
 

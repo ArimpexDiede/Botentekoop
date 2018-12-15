@@ -211,6 +211,41 @@ $(function() {
         });
     }
 
+
+
+    if (document.getElementById("search-page") !== null && $("div[id*='div-gpt-ad-']") !== null) {
+        $(window).scroll(function() {
+            setTimeout(function() {
+                var topofDiv = $("div[id*='div-gpt-ad-']").offset().top;
+                var body = $("body").height();
+                var footer = $("footer").height();
+                var dis = $("#site-disclaimer").height();
+                var div = $(".filter-options div[id*='google_ads_iframe']");
+                if (window.innerHeight > div.height() + 80) {
+
+                    if ($(window).scrollTop() > topofDiv - 81) {
+                        div.addClass("fixed-sidebar");
+                    } else {
+                        div.removeClass("fixed-sidebar");
+                    }
+                    if (div.offset().top + div.height() >= $('footer').offset().top - 10) {
+                        div.css({
+                            "position": "absolute",
+                            "top": "auto",
+                            "bottom": "-20px",
+                            "right": "12px"
+                        });
+                    }
+                    if ($(window).scrollTop() < body - 220 - footer - div.height() - dis) {
+                        div.removeAttr("style");
+                    }
+                } else {
+                    div.removeAttr("style").removeClass("fixed-sidebar");
+                }
+            }, 100);
+        });
+    }
+
     function scrolltoform() {
         document.getElementById("detail-sidebar").scrollIntoView({
             behavior: "smooth"
@@ -267,7 +302,7 @@ $(function() {
         var dominNumb = parseFloat(domin);
         var domaxNumb = parseFloat(domax);
 
-        if (lminNumb > lmaxNumb) {
+        if (lminNumb > lmaxNumb) {//if ((lminNumb > lmaxNumb) || (lminNumb !== "" && lmaxNumb == "")) {
             lmaxEl.setCustomValidity("Minimale waarde is hoger dan de maximale.");
         } else {
             lmaxEl.setCustomValidity("");
@@ -472,13 +507,11 @@ $(function() {
         clearEverything();
         formValidation();
 
-        var wlhi = window.location.href;
-
-        if (wlhi.indexOf("accessoires") > -1 ||
-            wlhi.indexOf("motorboten") > -1 ||
-            wlhi.indexOf("zeilboten") > -1 ||
-            wlhi.indexOf("sportboten") > -1) {
-            wlhi = '/uitgebreid-zoeken';
+        if (window.location.href.indexOf("accessoires") > -1 ||
+            window.location.href.indexOf("motorboten") > -1 ||
+            window.location.href.indexOf("zeilboten") > -1 ||
+            window.location.href.indexOf("sportboten") > -1) {
+            window.location.href = '/uitgebreid-zoeken';
         } // else {
         //  resultData();
         //  }
@@ -486,11 +519,11 @@ $(function() {
 
     //resultData ding $("#zoekform input").trigger('change');
     if (document.getElementById("adv-cats") !== null) {
-        var wlhi = window.location.href;
-        if (wlhi.indexOf("plaatsadvertentie/motorboot") > -1 ||
-            wlhi.indexOf("plaatsadvertentie/zeilboot") > -1 ||
-            wlhi.indexOf("plaatsadvertentie/sportboot") > -1 ||
-            wlhi.indexOf("plaatsadvertentie/accessoire") > -1) {
+
+        if (window.location.href.indexOf("plaatsadvertentie/motorboot") > -1 ||
+            window.location.href.indexOf("plaatsadvertentie/zeilboot") > -1 ||
+            window.location.href.indexOf("plaatsadvertentie/sportboot") > -1 ||
+            window.location.href.indexOf("plaatsadvertentie/accessoire") > -1) {
 
             document.getElementById("adv-cats").scrollIntoView({
                 behavior: "smooth"
@@ -499,7 +532,6 @@ $(function() {
     }
 
     $('#inputZip').change(function() {
-
 
         var postc = $('#inputZip').val();
         var huisnr = $('#inputHuisnummer').val();
@@ -532,8 +564,6 @@ $(function() {
                         }
 
                         highlightInput();
-
-
 
                         $('#inputPlaats').val(result.city);
                         $('#inputStraat').val(result.street);
