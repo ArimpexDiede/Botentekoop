@@ -36,6 +36,15 @@
                     }
                 }
             }
+
+            .image-placeholder-small {
+                @include media-breakpoint-up(sm) {
+                    height: 387px;
+                }
+                @include media-breakpoint-up(md) {
+                    height: 170px;
+                }        
+            }
         }
 
         a:not(.btn) {
@@ -78,19 +87,16 @@
     #afstand-accordion {
         .btn.btn-secondary {
             width: 100%;
-            padding: 14px 0;
             cursor: pointer;
-
-
-
         }
+
         #search-btn-wrap {
-          &.sticky-btn {
-              position: fixed;
-              bottom: 0;
-              width: 226px;
-              z-index: 10000;
-          }
+            &.sticky-btn {
+                position: fixed;
+                bottom: 0;
+                width: 226px;
+                z-index: 10000;
+            }
         }
     }
 

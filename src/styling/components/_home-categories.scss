@@ -3,6 +3,10 @@
 #home-categories {
     margin-top: 90px;
 
+    @include media-breakpoint-only(sm) {
+        margin-top: 104px;
+    }
+
     .home-category {
         font-size: 2rem;
 

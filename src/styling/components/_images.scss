@@ -36,7 +36,6 @@
 .image-placeholder-large {
     @extend .image-placeholder;
     height: $image-height-large-sm;
-    background-color: #eee;
 
     @include media-breakpoint-up(md) {
         height: $image-height-large-md;
@@ -50,7 +49,6 @@
 .image-placeholder-medium {
     @extend .image-placeholder;
     height: $image-height-medium-sm;
-    background-color: #eee;
 
     @include media-breakpoint-up(md) {
         height: $image-height-medium-md;
@@ -74,9 +72,6 @@
         height: $image-height-small-lg;
     }
 
-    @include media-breakpoint-down(xs) {
-        height: $image-height-small-xs;
-    }
 }
 
 .image-placeholder-squared-small {

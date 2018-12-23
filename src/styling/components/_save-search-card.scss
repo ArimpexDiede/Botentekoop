@@ -1,8 +1,9 @@
 #save-search-card {
     h6 {
-        font-size: 1rem;
+        font-size: 1.3rem;
         margin-top: -3px;
-        margin-bottom: 29px;
+        margin-bottom: 10px;
+        text-align: center;
     }
 
     .icon-savesearch {
@@ -55,7 +56,7 @@
 
         &:nth-child(2) {
             margin-left: 13px;
-            padding: 10px 0 8px 0;
+            padding: 10px 0 8px;
         }
         @include media-breakpoint-down(sm) {
             width: calc(50% - 2px);

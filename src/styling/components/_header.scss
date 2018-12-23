@@ -1,7 +1,7 @@
-﻿header {
+header {
     background: $blue;
     color: white;
-    padding: 12px 0 16px 0;
+    padding: 12px 0 16px;
 
     i {
         padding-right: 5px;
@@ -13,7 +13,6 @@
 
     &.inverse {
         i {
-
             &:before {
                 color: $gray-600 !important;
             }
@@ -34,14 +33,25 @@
             }
         }
 
-        #advertisement {
+        > a {
             padding-right: 10px;
             border-right: 1px solid;
             border-color: white;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: inline-block;
+            margin-left: 14px;
+            cursor: pointer;
+
+            .dropdown-menu {
+                min-width: 100px !important;
+            }
         }
 
         #logout {
-          padding-left: 10px;
+            padding-left: 10px;
         }
 
         #login {
@@ -56,7 +66,7 @@
     &.inverse {
         background-color: white;
         color: $grey-blue;
-        padding: 20px 0 100px 0;
+        padding: 20px 0 100px;
 
         nav {
             padding-top: 10px;

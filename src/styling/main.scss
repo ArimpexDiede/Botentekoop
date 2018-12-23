@@ -16,7 +16,6 @@
 @import "components/_collapse_menu";
 @import "components/_images";
 @import "components/_photo_slider";
-
 @import "components/_home_page";
 @import "components/_detail_page";
 @import "components/_search_page";
@@ -33,6 +32,7 @@
 @import "components/_search_sorting";
 @import "components/_color_box";
 @import "components/_captcha_modal";
+
 body {
     font-size: 15px !important;
     overflow-x: hidden;
@@ -47,21 +47,28 @@ body {
         object-fit: unset !important;
     }
 
+    .fa,
+    .fab,
+    .fal,
+    .far,
+    .fas {
+        margin-left: 5px;
+    }
+
     #news-content {
-      .image-placeholder {
-          background-color: #eee;
-          img {
+        .image-placeholder {
+            background-color: #eee;
 
+            img {
+                &.portrait-img {
+                    object-fit: unset;
+                    width: auto !important;
+                    margin: auto;
+                    display: block !important;
+                }
+            }
+        }
 
-              &.portrait-img {
-                  object-fit: unset;
-                  width: auto !important;
-                  margin: auto;
-                  display: block !important;
-
-              }
-          }
-      }
         .btn-secondary {
             @include media-breakpoint-down(md) {
                 padding: 16px 10px;
@@ -86,6 +93,25 @@ body {
                 height: 25px;
                 overflow: hidden;
             }
+        }
+
+        .image-placeholder-medium {
+            height: calc((100vw - 24px) * .75);
+
+            @include media-breakpoint-up(sm) {
+                height: 387px;
+            }
+            @include media-breakpoint-up(md) {
+                height: 170px;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 232px;
+            }
+
+            img {
+              max-height: none !important;
+            }
+
         }
     }
 
@@ -175,6 +201,8 @@ body {
 
     .btn-facebook {
         background-color: #41599c;
+        border-color: #41599c;
+        color: #fff;
     }
 
     .btn-twitter {

@@ -10,18 +10,18 @@
 
     .photo-slider-content {
         margin-bottom: 20px;
-        height: 483px;
+        height: 545px;
         @include media-breakpoint-down(sm) {
-            height: 61vw;
+            height: calc((100vw - 24px) * .75);
         }
         overflow: hidden;
 
         .slides {
             li {
-                height: 483px;
+                height: 545px;
                 background-color: #ddd;
                 @include media-breakpoint-down(sm) {
-                    height: 61vw;
+                    height: calc((100vw - 24px) * .75);
                 }
 
                 a {

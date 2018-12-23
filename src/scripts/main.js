@@ -62,6 +62,27 @@ $(window).on('load', function() {
         width: "75%",
         height: "75%"
     });
+
+    if (document.getElementsByClassName("photo-slider").length !== 0) {
+
+        function adjustFlexsliderHeight() {
+            var firstimg = $(".photo-slider-content li:first-child img")[0];
+            var fiRatio = firstimg.naturalWidth / firstimg.naturalHeight; // 1.5
+            var flexHeight = $('.photo-slider-content').width() / fiRatio;
+            var flexHeightparsed = parseInt(flexHeight, 10);
+
+            if (firstimg.naturalWidth > firstimg.naturalHeight) {
+
+                $(".photo-slider-content").css("height", flexHeightparsed);
+                $(".photo-slider-content li").css("height", flexHeightparsed);
+                $(".photo-slider-content img").each(function() {
+                    $(this).css("max-height", flexHeightparsed);
+                });
+            }
+        }
+        adjustFlexsliderHeight();
+    }
+
 });
 
 $(function() {
@@ -302,7 +323,7 @@ $(function() {
         var dominNumb = parseFloat(domin);
         var domaxNumb = parseFloat(domax);
 
-        if (lminNumb > lmaxNumb) {//if ((lminNumb > lmaxNumb) || (lminNumb !== "" && lmaxNumb == "")) {
+        if (lminNumb > lmaxNumb) { //if ((lminNumb > lmaxNumb) || (lminNumb !== "" && lmaxNumb == "")) {
             lmaxEl.setCustomValidity("Minimale waarde is hoger dan de maximale.");
         } else {
             lmaxEl.setCustomValidity("");
@@ -700,7 +721,5 @@ $(function() {
     })
 
     checkInputs()
-
-
 
 });

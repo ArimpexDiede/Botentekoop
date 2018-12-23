@@ -31,7 +31,6 @@
                 width: auto !important;
                 margin: auto;
                 display: block !important;
-
             }
         }
     }
@@ -66,13 +65,6 @@
         }
     }
 
-    .image-placeholder-small {
-        @include media-breakpoint-down(sm) {
-            height: 220px;
-            max-width: 340px;
-        }
-    }
-
     .category-tile {
         font-size: 1.1rem;
         color: theme-color("primary");
@@ -85,13 +77,4 @@
         color: $black;
     }
 
-    img:not(.portrait-img) {
-        @include media-breakpoint-down(md) {
-            margin: 0;
-            max-width: 100% !important;
-            height: auto !important;
-            width: 100% !important;
-            max-height: 300px;
-        }
-    }
 }
