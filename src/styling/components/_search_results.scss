@@ -43,7 +43,13 @@
                 }
                 @include media-breakpoint-up(md) {
                     height: 170px;
-                }        
+                }
+            }
+
+            &.text-right.d-none.d-md-block {
+                position: absolute;
+                bottom: 0;
+                right: 0;
             }
         }
 

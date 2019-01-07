@@ -7,9 +7,9 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         //  main: './src/scripts/main.js',
-        home: './src/scripts/home.js',
-        detail: './src/scripts/detail.js',
-        search: './src/scripts/search.js'
+        home: './src/scripts/home_page.js',
+        detail: './src/scripts/detail_page.js',
+        search: './src/scripts/search_page.js'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
@@ -119,7 +119,7 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 vendor: {
-                    test: /node_modules/, 
+                    test: /node_modules/,
                     name: "vendor",
                     chunks: "initial",
                     enforce: true

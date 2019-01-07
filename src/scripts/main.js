@@ -67,8 +67,9 @@ $(window).on('load', function() {
 
         function adjustFlexsliderHeight() {
             var firstimg = $(".photo-slider-content li:first-child img")[0];
-            var fiRatio = firstimg.naturalWidth / firstimg.naturalHeight; // 1.5
-            var flexHeight = $('.photo-slider-content').width() / fiRatio;
+            var fiRatio = firstimg.naturalWidth / firstimg.naturalHeight;
+            var maxWidth = $('.photo-slider-content').width();
+            var flexHeight = maxWidth / fiRatio;
             var flexHeightparsed = parseInt(flexHeight, 10);
 
             if (firstimg.naturalWidth > firstimg.naturalHeight) {
@@ -76,11 +77,31 @@ $(window).on('load', function() {
                 $(".photo-slider-content").css("height", flexHeightparsed);
                 $(".photo-slider-content li").css("height", flexHeightparsed);
                 $(".photo-slider-content img").each(function() {
-                    $(this).css("max-height", flexHeightparsed);
+                    $(this).css({
+                        "max-height": flexHeightparsed,
+                        "max-width": maxWidth
+                    });
                 });
             }
         }
         adjustFlexsliderHeight();
+        $(window).resize(adjustFlexsliderHeight);
+    }
+
+    if (document.getElementById("search-page") !== null) {
+
+        $("#search-results-list img, .last-content img, .highlighted-search-results img").each(function() {
+            if (this.naturalHeight > this.naturalWidth) {
+                this.classList.add('portrait-img')
+            }
+            if ($("#search-results-list .image-placeholder-small").height() == 220) {
+                if ($(this).height() < 220) {
+                    var height = (220 - $(this).height()) / 2;
+                    $(this).css("top", height)
+                }
+            }
+        });
+
     }
 
 });

@@ -15,10 +15,15 @@
 @import "components/_collapse_menu";
 @import "components/_images";
 @import "components/_photo_slider";
+@import "components/_captcha_modal";
+@import "components/_telefoonnummer";
+@import "components/_svg-icons";
+@import "components/_sharedicons";
 
 body {
     font-size: 15px !important;
     overflow-x: hidden;
+    background-color: transparent;
 
     input::-webkit-calendar-picker-indicator {
         display: none;
@@ -30,7 +35,28 @@ body {
         object-fit: unset !important;
     }
 
+    .fa,
+    .fab,
+    .fal,
+    .far,
+    .fas {
+        margin-left: 5px;
+    }
+
     #news-content {
+        .image-placeholder {
+            background-color: #eee;
+
+            img {
+                &.portrait-img {
+                    object-fit: unset;
+                    width: auto !important;
+                    margin: auto;
+                    display: block !important;
+                }
+            }
+        }
+
         .btn-secondary {
             @include media-breakpoint-down(md) {
                 padding: 16px 10px;
@@ -55,6 +81,25 @@ body {
                 height: 25px;
                 overflow: hidden;
             }
+        }
+
+        .image-placeholder-medium {
+            height: calc((100vw - 24px) * .75);
+
+            @include media-breakpoint-up(sm) {
+                height: 387px;
+            }
+            @include media-breakpoint-up(md) {
+                height: 170px;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 232px;
+            }
+
+            img {
+              max-height: none !important;
+            }
+
         }
     }
 
@@ -89,6 +134,13 @@ body {
                 -o-object-fit: cover;
                 object-fit: cover;
                 height: 100%;
+
+                &.portrait-img {
+                    object-fit: unset;
+                    width: auto !important;
+                    margin: auto;
+                    display: block !important;
+                }
             }
         }
 
@@ -144,6 +196,8 @@ body {
 
     .btn-facebook {
         background-color: #41599c;
+        border-color: #41599c;
+        color: #fff;
     }
 
     .btn-twitter {

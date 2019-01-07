@@ -35,21 +35,6 @@
         }
     }
 
-    /*.search-result-zeilboot {
-        img {
-            position: absolute;
-            right: auto;
-            bottom: 0;
-            width: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            height: auto;
-            @include media-breakpoint-down(sm) {
-                position: relative;
-                object-fit: contain;
-            }
-        }
-    }*/
 
     .highlighted-search-results {
         .image-placeholder-small {

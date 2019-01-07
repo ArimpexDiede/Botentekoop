@@ -99,7 +99,7 @@ module.exports = {
     }])
   ],
   output: {
-    filename: 'scripts/site-19-12-18-v2.js',
+    filename: 'scripts//site-2-1-19.js',
     library: '[name]',
     libraryTarget: 'var',
     path: path.resolve(__dirname, 'dist')

@@ -2,7 +2,10 @@ import '../styling/home_page.scss';
 import 'easy-autocomplete/dist/jquery.easy-autocomplete';
 import '../scripts/autocomplete';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
-import 'easy-autocomplete/dist/jquery.easy-autocomplete';
+
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
 
 $(function() {
     window.onscroll = function() {
